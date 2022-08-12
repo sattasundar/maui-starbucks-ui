@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:MauiStarbucks.Views.ControlViews"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:vm="clr-namespace:MauiStarbucks.ViewModels"
+             x:Class="MauiStarbucks.Views.Pages.DetailPage"
+             x:Name="DetailView"
+             ios:Page.UseSafeArea="True"
+             Shell.NavBarIsVisible="False"
+             Shell.PresentationMode="Animated"
+             Background="{StaticResource TertiaryBrush}">
+    <ContentPage.Content>
+        <Grid Margin="15,5,15,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <!---Header-->
+            <Grid Grid.Row="0" ColumnDefinitions="*,*,*">
+                <Border Grid.Column="0"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource EllipseBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Border.GestureRecognizers>
+                    <Image Source="back_arrow.png"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Border>
+                <Image Grid.Column="1"
+                       Style="{StaticResource ImgBrandStyle}"/>
+                <Border Grid.Column="2"
+                        HorizontalOptions="End"
+                        Style="{StaticResource EllipseBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer />
+                    </Border.GestureRecognizers>
+                    <Image Source="love_filled.png"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1"
+                  Margin="0,30,0,0">
+                <Border BackgroundColor="{Binding SelectedProduct.ProductImgBackground}"
+                        Padding="0,30,0,85">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15"/>
+                    </Border.StrokeShape>
+                    <Image Source="{Binding SelectedProduct.ProductImgUrl}"
+                           Aspect="AspectFit"
+                           HeightRequest="220"/>
+                </Border>
+                <control:CustomStepperView WidthRequest="110"
+                                           HeightRequest="35"
+                                           Margin="0,0,0,20"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="End"/>
+            </Grid>
+            <StackLayout Grid.Row="2"
+                         Margin="0,10">
+                <Label Text="{Binding SelectedProduct.ProductType}"
+                       TextColor="Black"
+                       FontFamily="RalewayRegular"
+                       FontSize="18"/>
+                <Grid ColumnDefinitions="Auto,*" HorizontalOptions="FillAndExpand">
+                    <Label Grid.Column="0" Text="{Binding SelectedProduct.ProductName}"
+                           TextColor="Black"
+                           FontFamily="RalewayMedium"
+                           FontSize="22"
+                           HorizontalOptions="StartAndExpand"/>
+                    <HorizontalStackLayout Grid.Column="1"
+                                           HorizontalOptions="End">
+                        <Image
+                           Source="star.png"
+                           Margin="0,0,10,0"
+                           Aspect="Center"/>
+                        <Label Text="4.5"
+                           FontSize="22"
+                           TextColor="#BFBFBF"
+                           HorizontalOptions="End"/>
+                    </HorizontalStackLayout>
+                 
+                </Grid>
+                <Label Text="{Binding SelectedProduct.ProductDescription}"
+                       LineBreakMode="WordWrap"
+                       FontFamily="ProximaNovaRegular"
+                       FontSize="18"
+                       TextColor="#6D6D6D"
+                       Margin="0,20,0,20"/>
+                <Grid ColumnDefinitions="*,Auto,Auto">
+                    <HorizontalStackLayout Grid.Column="0"
+                                           Spacing="10"
+                                           x:Name="SizeRadioGroup"
+                                           RadioButtonGroup.GroupName="Size"
+                                           RadioButtonGroup.SelectedValue="{Binding SelectedProduct.ProductSizeType}"
+                                           BindableLayout.ItemsSource="{StaticResource SizeArray}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <RadioButton Content="{Binding .}"
+                                             Value="{Binding .}">
+                                    <RadioButton.ControlTemplate>
+                                        <ControlTemplate>
+                                            <Grid RowDefinitions="*,Auto"
+                                                  RowSpacing="5">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroupList>
+                                                        <VisualStateGroup x:Name="CheckedStates">
+                                                            <VisualState x:Name="Checked">
+                                                                <VisualState.Setters>
+                                                                    <Setter
+                                                                    TargetName="SizeLabel"
+                                                                    Property="Label.TextColor"
+                                                                    Value="{StaticResource Primary}"/>
+                                                                    <Setter
+                                                                    TargetName="SquareBorderView"
+                                                                    Property="Border.Background"
+                                                                    Value="{StaticResource PrimaryBrush}"/>
+                                                                </VisualState.Setters>
+                                                            </VisualState>
+
+                                                            <VisualState x:Name="Unchecked">
+                                                                <VisualState.Setters>
+                                                                    <Setter
+                                                                    TargetName="SizeLabel"
+                                                                    Property="Label.TextColor"
+                                                                    Value="{StaticResource Gray500}"/>
+                                                                    <Setter
+                                                                    TargetName="SquareBorderView"
+                                                                    Property="Border.Background"
+                                                                    Value="{StaticResource Gray100Brush}"/>
+                                                                </VisualState.Setters>
+                                                            </VisualState>
+                                                        </VisualStateGroup>
+                                                    </VisualStateGroupList>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Border Grid.Row="0" 
+                                                        x:Name="SquareBorderView"
+                                                        StrokeThickness="0"
+                                                        WidthRequest="80"
+                                                        HeightRequest="80">
+                                                    <Border.StrokeShape>
+                                                        <RoundRectangle CornerRadius="5"/>
+                                                    </Border.StrokeShape>
+                                                    <Image Aspect="Center">
+                                                        <Image.Triggers>
+                                                            <DataTrigger TargetType="Image"
+                                                                         Binding="{TemplateBinding Content}"
+                                                                         Value="Tall">
+                                                                <Setter Property="Source" Value="tall.png"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Image"
+                                                                         Binding="{TemplateBinding Content}"
+                                                                         Value="Grande">
+                                                                <Setter Property="Source" Value="grande.png"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Image"
+                                                                         Binding="{TemplateBinding Content}"
+                                                                         Value="Venti">
+                                                                <Setter Property="Source" Value="venti.png"/>
+                                                            </DataTrigger>
+                                                        </Image.Triggers>
+                                                    </Image>
+                                                </Border>
+                                                <Label Grid.Row="1" 
+                                                       x:Name="SizeLabel"
+                                                       HorizontalTextAlignment="Center"
+                                                       FontFamily="RalewayRegular"
+                                                       Text="{TemplateBinding Content}"
+                                                       FontSize="16"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </RadioButton.ControlTemplate>
+                                </RadioButton>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                    <BoxView Grid.Column="1" 
+                             WidthRequest="1"
+                             Background="#B5B5B5"
+                             HorizontalOptions="Start"
+                             Margin="-10,15,0,35"/>
+                    <Label Grid.Column="2"
+                           x:Name="PriceLabel"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"
+                           Margin="0,0,0,20"
+                           Text="{Binding SelectedProduct.ProductPrice, StringFormat='${0}.00'}"
+                           TextColor="{StaticResource Primary}"
+                           FontFamily="PoppinsRegular"
+                           FontSize="25">
+                    </Label>
+                </Grid>
+            </StackLayout>
+            <Button Grid.Row="3" Text="Add to bag"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End"
+                    FontFamily="RalewayMedium"
+                    FontSize="20"
+                    Background="{StaticResource PrimaryBrush}"
+                    TextColor="White"
+                    CornerRadius="30"
+                    HeightRequest="55"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

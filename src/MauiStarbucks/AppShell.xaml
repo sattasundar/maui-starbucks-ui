@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiStarbucks.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiStarbucks"
+    xmlns:page="clr-namespace:MauiStarbucks.Views.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar Route="starbucks">
+        <Tab Icon="home.png" Route="home">
+            <ShellContent ContentTemplate="{DataTemplate page:HomePage}" />
+        </Tab>
+        <Tab Icon="wallet.png" Route="wallet">
+            <ShellContent ContentTemplate="{DataTemplate page:WalletPage}" />
+        </Tab>
+        <Tab Icon="fav.png" Route="fav">
+            <ShellContent ContentTemplate="{DataTemplate page:FavouritePage}" />
+        </Tab>
+        <Tab Icon="notification.png" Route="notification">
+            <ShellContent ContentTemplate="{DataTemplate page:NotificationPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

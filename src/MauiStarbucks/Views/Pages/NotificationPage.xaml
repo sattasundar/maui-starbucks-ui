@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page:CustomTabBar xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:page="clr-namespace:MauiStarbucks.Views.Pages"
+                   xmlns:local="clr-namespace:MauiStarbucks"
+                   BindingContext="{x:Static local:AppLocator.NotificationViewModel}"
+                   x:Class="MauiStarbucks.Views.Pages.NotificationPage"
+                   SelectedTabIndex="3">
+    <page:CustomTabBar.ViewContent>
+        <Grid>
+            <Label 
+            Text="Welcome to Notification!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        </Grid>
+    </page:CustomTabBar.ViewContent>
+</page:CustomTabBar>

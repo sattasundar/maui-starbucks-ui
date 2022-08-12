@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiStarbucks.Views.ControlViews.CustomStepperView">
+    <Frame Padding="0"
+           HasShadow="False"
+           CornerRadius="17"
+           BackgroundColor="White">
+        <Grid BackgroundColor="White"
+              ColumnDefinitions="*,*,*">
+            <ImageButton Grid.Column="0" Source="substract.png"
+                     Aspect="Center"
+                     Background="{StaticResource PrimaryBrush}"
+                     HeightRequest="35"
+                     WidthRequest="35"
+                     CornerRadius="17"
+                     HorizontalOptions="Start"
+                     Clicked="Substract_Tapped"/>
+            <Label Grid.Column="1" x:Name="CountLabel"
+               Text="0"
+               FontSize="22"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" 
+               TextColor="{StaticResource Primary}"
+               FontFamily="ProximaNovaRegular"/>
+            <ImageButton Grid.Column="2" Source="add.png"
+                     Aspect="Center"
+                     Background="{StaticResource PrimaryBrush}"
+                     HeightRequest="35"
+                     WidthRequest="35"
+                     CornerRadius="17"
+                     HorizontalOptions="End"
+                     Clicked="Add_Tapped"/>
+        </Grid>
+    </Frame>
+    
+</ContentView>

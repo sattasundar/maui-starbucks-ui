@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style x:Key="EllipseBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource Gray100Brush}"/>
+        <Setter Property="HeightRequest" Value="45"/>
+        <Setter Property="WidthRequest" Value="45"/>
+        <Setter Property="StrokeThickness" Value="0"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="Padding" Value="13"/>
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <Ellipse/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="FilterBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="Stroke" Value="{StaticResource TertiaryBrush}"/>
+        <Setter Property="WidthRequest" Value="60"/>
+        <Setter Property="HeightRequest" Value="60"/>
+        <Setter Property="StrokeThickness" Value="2"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="Padding" Value="15"/>
+        <Setter Property="Margin" Value="0,20,0,0"/>
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <Ellipse/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="SearchBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource Gray100Brush}"/>
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="StrokeThickness" Value="0"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Padding" Value="20,0,0,0"/>
+        <Setter Property="Margin" Value="0,20,0,0"/>
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="25"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Image" x:Key="ImgBrandStyle">
+        <Setter Property="HeightRequest" Value="55"/>
+        <Setter Property="WidthRequest" Value="55"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="Aspect" Value="AspectFit"/>
+        <Setter Property="Source" Value="logo.png"/>
+    </Style>
+    <Style TargetType="Label" x:Key="LargeMessageLabelStyle">
+        <Setter Property="FontFamily" Value="RalewayRegular"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+    </Style>
+    <Style TargetType="Entry" x:Key="SearchEntryStyle">
+        <Setter Property="FontFamily" Value="RalewayRegular"/>
+        <Setter Property="Placeholder" Value="Search"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+    </Style>
+    <x:Array Type="{x:Type x:String}" x:Key="CategoriesArray">
+        <x:String>All</x:String>
+        <x:String>Coffee</x:String>
+        <x:String>Tea</x:String>
+        <x:String>Drink</x:String>
+        <x:String>Food</x:String>
+    </x:Array>
+    <x:Array Type="{x:Type x:String}" x:Key="SizeArray">
+        <x:String>Tall</x:String>
+        <x:String>Grande</x:String>
+        <x:String>Venti</x:String>
+    </x:Array>
+</ResourceDictionary>

@@ -2,7 +2,7 @@
 
 Starbucks App UI Redesign using .NET MAUI.
 
-## Features & Library
+## Features & Libraries
 
 * [.NET MAUI](https://docs.microsoft.com/en-us/dotnet/maui/)
 * [Handlers](https://docs.microsoft.com/en-us/dotnet/maui/user-interface/handlers/customize)

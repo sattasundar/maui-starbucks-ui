@@ -7,6 +7,7 @@ Starbucks App UI Redesign using .NET MAUI.
 * [.NET MAUI](https://docs.microsoft.com/en-us/dotnet/maui/)
 * [Handlers](https://docs.microsoft.com/en-us/dotnet/maui/user-interface/handlers/customize)
 * [Border](https://docs.microsoft.com/en-us/dotnet/maui/user-interface/controls/border)
+* [ControlTemplates](https://docs.microsoft.com/en-us/dotnet/maui/fundamentals/controltemplate)
 * [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm/)
 * [CommunityToolkit.Maui](https://www.nuget.org/packages/CommunityToolkit.Maui)
 * [Splat](https://www.nuget.org/packages/Splat)

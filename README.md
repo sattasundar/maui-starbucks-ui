@@ -1,10 +1,14 @@
 # Starbucks App Redesign- .NET MAUI UI Design Showcase
-<a href="https://snppts.dev/snippet/maui-starbucks-redesign" target="_blank">
-   <img src="https://camo.githubusercontent.com/cd35f0ca9d14d9c9a7c4f35e9321fc32fa6369570292080e6c44fe8522768139/68747470733a2f2f7777772e736e707074732e6465762f696d672f736e707074732d62616467652e6a7067" width="150" alt="Snppts Badge"/>
-</a>
+
 <p>
 Starbucks App UI Redesign using .NET MAUI.
 </p>
+<p align="right">
+   <a href="https://snppts.dev/snippet/maui-starbucks-redesign" target="_blank">
+   <img src="https://camo.githubusercontent.com/cd35f0ca9d14d9c9a7c4f35e9321fc32fa6369570292080e6c44fe8522768139/68747470733a2f2f7777772e736e707074732e6465762f696d672f736e707074732d62616467652e6a7067" width="200" height="60" alt="Snppts Badge"/>
+</a>
+</p>
+
 ## Features & Libraries
 
 * [.NET MAUI](https://docs.microsoft.com/en-us/dotnet/maui/)

@@ -40,21 +40,22 @@ jobs:
         cd src/MauiStarbucks
         dotnet publish -f:net6.0-android -c:Release
     
-    - uses: actions/upload-artifact@v2
+    - name: Download APK
+      uses: actions/upload-artifact@v2
       with:
         name: artifacts-android
         path: |
           src\MauiStarbucks\bin\Release\net6.0-android\publish\*.apk
 
-  deployAppCenter:
-    runs-on: ubuntu-latest
-    steps:  
-    - name: App Center Distribute
-      uses: wzieba/AppCenter-Github-Action@v1.3.3
-      with:
-          appName: orgs/dotNET-MAUI/apps/MauiStarbucks
-          token: ${{secrets.APP_CENTER_TOKEN}}
-          group: Public
-          file: src\MauiStarbucks\bin\Release\net6.0-android\publish\com.companyname.mauistarbucks-Signed.apk
-          debug: false
+  #deployAppCenter:
+  #  runs-on: ubuntu-latest
+  #  steps:  
+  #  - name: App Center Distribute
+  #    uses: wzieba/AppCenter-Github-Action@v1.3.3
+  #    with:
+  #        appName: orgs/dotNET-MAUI/apps/MauiStarbucks
+  #        token: ${{secrets.APP_CENTER_TOKEN}}
+  #        group: Public
+  #        file: src\MauiStarbucks\bin\Release\net6.0-android\publish\com.companyname.mauistarbucks-Signed.apk
+  #        debug: false
       

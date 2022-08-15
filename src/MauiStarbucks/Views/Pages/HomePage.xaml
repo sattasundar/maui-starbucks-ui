@@ -110,8 +110,8 @@
                                                                     Value="{StaticResource White}"/>
                                                                             <Setter
                                                                     TargetName="ChipBorderView"
-                                                                    Property="Border.BackgroundColor"
-                                                                    Value="{StaticResource Primary}"/>
+                                                                    Property="Border.Background"
+                                                                    Value="{StaticResource PrimaryBrush}"/>
                                                                         </VisualState.Setters>
                                                                     </VisualState>
                                                                     <VisualState x:Name="Unchecked">
@@ -122,8 +122,8 @@
                                                                     Value="{StaticResource Gray400}"/>
                                                                             <Setter
                                                                     TargetName="ChipBorderView"
-                                                                    Property="Border.BackgroundColor"
-                                                                    Value="{StaticResource Gray100}"/>
+                                                                    Property="Border.Background"
+                                                                    Value="{StaticResource Gray100Brush}"/>
                                                                         </VisualState.Setters>
                                                                     </VisualState>
                                                                 </VisualStateGroup>

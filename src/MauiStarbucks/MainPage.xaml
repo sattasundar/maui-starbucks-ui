@@ -34,6 +34,73 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
+            <ScrollView Orientation="Horizontal"
+                                    VerticalOptions="Start"
+                                    VerticalScrollBarVisibility="Never"
+                                    HorizontalScrollBarVisibility="Never"
+                                    BackgroundColor="Transparent">
+                            <HorizontalStackLayout Spacing="10"
+                                       RadioButtonGroup.GroupName="CoffeCategories"
+                                       RadioButtonGroup.SelectedValue="All"
+                                       BindableLayout.ItemsSource="{StaticResource CategoriesArray}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <RadioButton Content="{Binding .}" Value="{Binding .}">
+                                            <RadioButton.ControlTemplate>
+                                                <ControlTemplate>
+                                                    <Grid HorizontalOptions="FillAndExpand">
+                                                        <VisualStateManager.VisualStateGroups>
+                                                            <VisualStateGroupList>
+                                                                <VisualStateGroup x:Name="CheckedStates">
+                                                                    <VisualState x:Name="Checked">
+                                                                        <VisualState.Setters>
+                                                                            <Setter
+                                                                    TargetName="CategoryLabel"
+                                                                    Property="Label.TextColor"
+                                                                    Value="{StaticResource White}"/>
+                                                                            <Setter
+                                                                    TargetName="ChipBorderView"
+                                                                    Property="Border.Background"
+                                                                    Value="{StaticResource PrimaryBrush}"/>
+                                                                        </VisualState.Setters>
+                                                                    </VisualState>
+                                                                    <VisualState x:Name="Unchecked">
+                                                                        <VisualState.Setters>
+                                                                            <Setter
+                                                                    TargetName="CategoryLabel"
+                                                                    Property="Label.TextColor"
+                                                                    Value="{StaticResource Gray400}"/>
+                                                                            <Setter
+                                                                    TargetName="ChipBorderView"
+                                                                    Property="Border.Background"
+                                                                    Value="{StaticResource Gray100Brush}"/>
+                                                                        </VisualState.Setters>
+                                                                    </VisualState>
+                                                                </VisualStateGroup>
+                                                            </VisualStateGroupList>
+                                                        </VisualStateManager.VisualStateGroups>
+                                                        <Border StrokeThickness="0"
+                                                        x:Name="ChipBorderView"
+                                                        HeightRequest="35"
+                                                        WidthRequest="90">
+                                                            <Border.StrokeShape>
+                                                                <RoundRectangle CornerRadius="25"/>
+                                                            </Border.StrokeShape>
+                                                            <Label Text="{TemplateBinding Content}" 
+                                                           x:Name="CategoryLabel"
+                                                           HorizontalTextAlignment="Center"
+                                                           VerticalTextAlignment="Center"
+                                                           FontFamily="RalewayRegular"
+                                                           FontSize="16"/>
+                                                        </Border>
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </RadioButton.ControlTemplate>
+                                        </RadioButton>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </HorizontalStackLayout>
+                        </ScrollView>
         </VerticalStackLayout>
     </ScrollView>
 

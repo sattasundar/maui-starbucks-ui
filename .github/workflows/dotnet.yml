@@ -46,12 +46,15 @@ jobs:
         path: |
           src\MauiStarbucks\bin\Release\net6.0-android\publish\*.apk
 
-    - name: Upload artifact to App Center
+  deployAppCenter:
+    runs-on: ubuntu-latest
+    steps:  
+    - name: App Center Distribute
       uses: wzieba/AppCenter-Github-Action@v1.3.3
       with:
-        appName: dotNET MAUI/MauiStarbucks
-        token: ${{secrets.APP_CENTER_TOKEN}}
-        group: Public
-        file: src\MauiStarbucks\bin\Release\net6.0-android\publish\com.companyname.mauistarbucks-Signed.apk
-        debug: false
+          appName: orgs/dotNET-MAUI/apps/MauiStarbucks
+          token: ${{secrets.APP_CENTER_TOKEN}}
+          group: Public
+          file: src\MauiStarbucks\bin\Release\net6.0-android\publish\com.companyname.mauistarbucks-Signed.apk
+          debug: false
       

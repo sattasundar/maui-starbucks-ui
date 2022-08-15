@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:BasePage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:page="clr-namespace:MauiStarbucks.Views.Pages"
                xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
                xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
                x:Class="MauiStarbucks.Views.Pages.CustomTabBar"
-               ios:Page.UseSafeArea="True"
+               ios:Page.UseSafeArea="False"
                x:Name="BaseTabBar">
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand"
@@ -21,9 +21,9 @@
             </ContentView>
             <Frame Grid.Row="1"
                    Padding="0"
-                   HasShadow="True"
+                   HasShadow="False"
                    BorderColor="{DynamicResource Primary}"
-                   Background="{StaticResource PrimaryBrush}"
+                   BackgroundColor="{DynamicResource Primary}"
                    HeightRequest="66"
                    CornerRadius="33"
                    VerticalOptions="End"
@@ -32,6 +32,7 @@
                 <Grid ColumnDefinitions="*,*,*,*">
                     <ImageButton Grid.Column="0" 
                                  Source="home.png"
+                                 Aspect="Center"
                                  Padding="12"
                                  Command="{Binding HomeCommand, Source={x:Reference BaseTabBar}}">
                         <ImageButton.Behaviors>
@@ -41,6 +42,7 @@
                     <ImageButton Grid.Column="1" 
                                  Source="wallet.png"
                                  Padding="12"
+                                 Aspect="Center"
                                  Command="{Binding WalletCommand, Source={x:Reference BaseTabBar}}">
                         <ImageButton.Behaviors>
                             <mct:IconTintColorBehavior TintColor="{StaticResource White}"/>
@@ -49,6 +51,7 @@
                     <ImageButton Grid.Column="2" 
                                  Source="fav.png"
                                  Padding="12"
+                                 Aspect="Center"
                                  Command="{Binding FavCommand, Source={x:Reference BaseTabBar}}">
                         <ImageButton.Behaviors>
                             <mct:IconTintColorBehavior TintColor="{StaticResource White}"/>
@@ -57,6 +60,7 @@
                     <ImageButton Grid.Column="3" 
                                  Source="notification.png"
                                  Padding="10"
+                                 Aspect="Center"
                                  Command="{Binding NotificationCommand, Source={x:Reference BaseTabBar}}">
                         <ImageButton.Behaviors>
                             <mct:IconTintColorBehavior TintColor="{StaticResource White}"/>

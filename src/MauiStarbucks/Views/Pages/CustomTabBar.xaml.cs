@@ -100,9 +100,11 @@ public partial class CustomTabBar : BasePage
     }
     #endregion
     public CustomTabBar()
-    {
+    {   
         InitializeComponent();
-        //viewRowHeight.Height = AppLocator.DisplayHeight;
+#if ANDROID
+        viewRowHeight.Height = AppLocator.DisplayHeight;
+#endif
         HomeCommand = new Command(() => Shell.Current.GoToAsync("///starbucks/home"));
         WalletCommand = new Command(() => Shell.Current.GoToAsync("///starbucks/wallet"));
         FavCommand = new Command(() => Shell.Current.GoToAsync("///starbucks/fav"));

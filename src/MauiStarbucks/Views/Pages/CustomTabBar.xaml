@@ -27,8 +27,7 @@
                    HeightRequest="66"
                    CornerRadius="33"
                    VerticalOptions="End"
-                   IsClippedToBounds="False"
-                   Margin="0,0,0,-5">
+                   IsClippedToBounds="False">
                 <Grid ColumnDefinitions="*,*,*,*">
                     <ImageButton Grid.Column="0" 
                                  Source="home.png"

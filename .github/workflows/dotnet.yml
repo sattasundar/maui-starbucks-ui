@@ -44,5 +44,14 @@ jobs:
       with:
         name: artifacts-android
         path: |
-          src/MauiStarbucks\bin\Release\net6.0-android\publish\*.apk
+          src\MauiStarbucks\bin\Release\net6.0-android\publish\*.apk
 
+    - name: Upload artifact to App Center
+      uses: wzieba/AppCenter-Github-Action@v1.3.3
+      with:
+        appName: dotNET MAUI/MauiStarbucks
+        token: ${{secrets.APP_CENTER_TOKEN}}
+        group: Public
+        file: src\MauiStarbucks\bin\Release\net6.0-android\publish\com.companyname.mauistarbucks-Signed.apk
+        debug: false
+      

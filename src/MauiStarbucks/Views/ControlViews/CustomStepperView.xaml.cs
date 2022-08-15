@@ -1,6 +1,6 @@
 namespace MauiStarbucks.Views.ControlViews;
 
-public partial class CustomStepperView : ContentView
+public partial class CustomStepperView : Microsoft.Maui.Controls.ContentView
 {
 	int count;
 	public CustomStepperView()

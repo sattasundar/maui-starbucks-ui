@@ -16,7 +16,7 @@
             Locator.CurrentMutable.Register(()=>new FavouriteViewModel());
             Locator.CurrentMutable.Register(()=>new NotificationViewModel());
             Locator.CurrentMutable.Register(()=>new DetailViewModel());
-            DisplayHeight = (DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density);
+            DisplayHeight = (DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density)-130;
         }
     }
 }

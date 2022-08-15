@@ -45,7 +45,7 @@
                                        BindableLayout.ItemsSource="{StaticResource CategoriesArray}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <RadioButton Content="{Binding .}" Value="{Binding .}">
+                                        <RadioButton x:Name="RadioCategory" Content="{Binding .}" Value="{Binding .}">
                                             <RadioButton.ControlTemplate>
                                                 <ControlTemplate>
                                                     <Grid HorizontalOptions="FillAndExpand">
@@ -58,10 +58,10 @@
                                                                     TargetName="CategoryLabel"
                                                                     Property="Label.TextColor"
                                                                     Value="{StaticResource White}"/>
-                                                                            <Setter
+                                                                            <!--<Setter
                                                                     TargetName="ChipBorderView"
                                                                     Property="Border.Background"
-                                                                    Value="{StaticResource PrimaryBrush}"/>
+                                                                    Value="{StaticResource PrimaryBrush}"/>-->
                                                                         </VisualState.Setters>
                                                                     </VisualState>
                                                                     <VisualState x:Name="Unchecked">
@@ -70,10 +70,10 @@
                                                                     TargetName="CategoryLabel"
                                                                     Property="Label.TextColor"
                                                                     Value="{StaticResource Gray400}"/>
-                                                                            <Setter
+                                                                            <!--<Setter
                                                                     TargetName="ChipBorderView"
                                                                     Property="Border.Background"
-                                                                    Value="{StaticResource Gray100Brush}"/>
+                                                                    Value="{StaticResource Gray100Brush}"/>-->
                                                                         </VisualState.Setters>
                                                                     </VisualState>
                                                                 </VisualStateGroup>
@@ -83,6 +83,20 @@
                                                         x:Name="ChipBorderView"
                                                         HeightRequest="35"
                                                         WidthRequest="90">
+                                                            <Border.Triggers>
+                                                                <DataTrigger TargetType="Border"
+                                                                             Binding="{Binding Source={x:Reference RadioCategory},Path=IsChecked}"
+                                                                             Value="True">
+                                                                    <Setter Property="BackgroundColor" Value="Red"/>
+
+                                                                </DataTrigger>
+                                                                 <DataTrigger TargetType="Border"
+                                                                             Binding="{Binding Source={x:Reference RadioCategory},Path=IsChecked}"
+                                                                             Value="False">
+                                                                    <Setter Property="BackgroundColor" Value="Gray"/>
+
+                                                                </DataTrigger>
+                                                            </Border.Triggers>
                                                             <Border.StrokeShape>
                                                                 <RoundRectangle CornerRadius="25"/>
                                                             </Border.StrokeShape>

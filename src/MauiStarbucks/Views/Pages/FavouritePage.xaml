@@ -11,7 +11,8 @@
             <Label 
             Text="Welcome to Favourite!"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+                TextColor="Black"/>
         </Grid>
     </page:CustomTabBar.ViewContent>
 </page:CustomTabBar>

@@ -8,7 +8,7 @@
                    xmlns:local="clr-namespace:MauiStarbucks"
                    x:Class="MauiStarbucks.Views.Pages.HomePage"
                    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
-                   android:Application.WindowSoftInputModeAdjust="Resize"
+                   android:Application.WindowSoftInputModeAdjust="Unspecified"
                    BindingContext="{x:Static local:AppLocator.HomeViewModel}"
                    x:Name="HomeView"
                    SelectedTabIndex="0"

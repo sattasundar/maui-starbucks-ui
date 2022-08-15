@@ -11,8 +11,8 @@
             <Label 
             Text="Welcome to Wallet!"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-            <Button Text="Hello" HeightRequest="50"/>
+            HorizontalOptions="Center" 
+                TextColor="Black"/>
         </Grid>
     </page:CustomTabBar.ViewContent>
 </page:CustomTabBar>

@@ -11,7 +11,7 @@
         <Grid HorizontalOptions="FillAndExpand"
               VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-                <RowDefinition Height="715"/>
+                <RowDefinition x:Name="viewRowHeight"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentView Content="{Binding ViewContent, Source={x:Reference BaseTabBar}}"
@@ -26,7 +26,9 @@
                    Background="{StaticResource PrimaryBrush}"
                    HeightRequest="66"
                    CornerRadius="33"
-                   VerticalOptions="End">
+                   VerticalOptions="End"
+                   IsClippedToBounds="False"
+                   Margin="0,0,0,-5">
                 <Grid ColumnDefinitions="*,*,*,*">
                     <ImageButton Grid.Column="0" 
                                  Source="home.png"

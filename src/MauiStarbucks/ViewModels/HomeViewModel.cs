@@ -10,7 +10,13 @@ namespace MauiStarbucks.ViewModels
 
         public string[] Categories { get; set; }
 
+        [ObservableProperty]
+        public string _categorySelectedValue;
 
+        partial void OnCategorySelectedValueChanged(string value)
+        {
+            Debug.WriteLine(value);
+        }
         public HomeViewModel()
         {
             DetailCommand = new Command(OnDetailCommand);
@@ -24,6 +30,7 @@ namespace MauiStarbucks.ViewModels
 
         public override Task Initialize()
         {
+            CategorySelectedValue = "All";
             Categories = Enum.GetNames(typeof(CoffeCategory)).Cast<string>().Select(x => x.ToString()).ToArray();
             Products = new ObservableCollection<Product>(ProductService.Instance.GetProducts());
             return Task.CompletedTask;

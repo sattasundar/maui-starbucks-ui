@@ -58,7 +58,7 @@
                     </ImageButton>
                     <ImageButton Grid.Column="3" 
                                  Source="notification.png"
-                                 Padding="10"
+                                 Padding="12"
                                  Aspect="Center"
                                  Command="{Binding NotificationCommand, Source={x:Reference BaseTabBar}}">
                         <ImageButton.Behaviors>

@@ -2,120 +2,52 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiStarbucks.MainPage">
-
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-            <ScrollView Orientation="Horizontal"
-                                    VerticalOptions="Start"
-                                    VerticalScrollBarVisibility="Never"
-                                    HorizontalScrollBarVisibility="Never"
-                                    BackgroundColor="Transparent">
-                            <HorizontalStackLayout Spacing="10"
-                                       RadioButtonGroup.GroupName="CoffeCategories"
-                                       RadioButtonGroup.SelectedValue="All"
-                                       BindableLayout.ItemsSource="{StaticResource CategoriesArray}">
-                                <BindableLayout.ItemTemplate>
-                                    <DataTemplate>
-                                        <RadioButton x:Name="RadioCategory" Content="{Binding .}" Value="{Binding .}">
-                                            <RadioButton.ControlTemplate>
-                                                <ControlTemplate>
-                                                    <Grid HorizontalOptions="FillAndExpand">
-                                                        <VisualStateManager.VisualStateGroups>
-                                                            <VisualStateGroupList>
-                                                                <VisualStateGroup x:Name="CheckedStates">
-                                                                    <VisualState x:Name="Checked">
-                                                                        <VisualState.Setters>
-                                                                            <Setter
-                                                                    TargetName="CategoryLabel"
-                                                                    Property="Label.TextColor"
-                                                                    Value="{StaticResource White}"/>
-                                                                            <!--<Setter
-                                                                    TargetName="ChipBorderView"
-                                                                    Property="Border.Background"
-                                                                    Value="{StaticResource PrimaryBrush}"/>-->
-                                                                        </VisualState.Setters>
-                                                                    </VisualState>
-                                                                    <VisualState x:Name="Unchecked">
-                                                                        <VisualState.Setters>
-                                                                            <Setter
-                                                                    TargetName="CategoryLabel"
-                                                                    Property="Label.TextColor"
-                                                                    Value="{StaticResource Gray400}"/>
-                                                                            <!--<Setter
-                                                                    TargetName="ChipBorderView"
-                                                                    Property="Border.Background"
-                                                                    Value="{StaticResource Gray100Brush}"/>-->
-                                                                        </VisualState.Setters>
-                                                                    </VisualState>
-                                                                </VisualStateGroup>
-                                                            </VisualStateGroupList>
-                                                        </VisualStateManager.VisualStateGroups>
-                                                        <Border StrokeThickness="0"
-                                                        x:Name="ChipBorderView"
-                                                        HeightRequest="35"
-                                                        WidthRequest="90">
-                                                            <Border.Triggers>
-                                                                <DataTrigger TargetType="Border"
-                                                                             Binding="{Binding Source={x:Reference RadioCategory},Path=IsChecked}"
-                                                                             Value="True">
-                                                                    <Setter Property="BackgroundColor" Value="Red"/>
-
-                                                                </DataTrigger>
-                                                                 <DataTrigger TargetType="Border"
-                                                                             Binding="{Binding Source={x:Reference RadioCategory},Path=IsChecked}"
-                                                                             Value="False">
-                                                                    <Setter Property="BackgroundColor" Value="Gray"/>
-
-                                                                </DataTrigger>
-                                                            </Border.Triggers>
-                                                            <Border.StrokeShape>
-                                                                <RoundRectangle CornerRadius="25"/>
-                                                            </Border.StrokeShape>
-                                                            <Label Text="{TemplateBinding Content}" 
-                                                           x:Name="CategoryLabel"
-                                                           HorizontalTextAlignment="Center"
-                                                           VerticalTextAlignment="Center"
-                                                           FontFamily="RalewayRegular"
-                                                           FontSize="16"/>
-                                                        </Border>
-                                                    </Grid>
-                                                </ControlTemplate>
-                                            </RadioButton.ControlTemplate>
-                                        </RadioButton>
-                                    </DataTemplate>
-                                </BindableLayout.ItemTemplate>
-                            </HorizontalStackLayout>
-                        </ScrollView>
-        </VerticalStackLayout>
-    </ScrollView>
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0"  VerticalOptions="FillAndExpand">
+                <StackLayout Spacing="25"
+                             Padding="30,0"
+                             VerticalOptions="Center">
+                    <Entry Placeholder="Type here..."
+                           BackgroundColor="ForestGreen"/>
+                    <Label Text="Hello World!"
+                           HorizontalOptions="Center"
+                           FontSize="Medium"/>
+                    <Label Text="Hello World!"
+                           HorizontalOptions="Center"
+                           FontSize="Medium"/>
+                    <Label Text="Hello World!"
+                           HorizontalOptions="Center"
+                           FontSize="Medium"/>
+                    <Label Text="Hello World!"
+                           HorizontalOptions="Center"
+                           FontSize="Medium"/>
+                    <Label Text="Hello World!"
+                           HorizontalOptions="Center"
+                           FontSize="Medium"/>
+                    <Label Text="Hello World!"
+                           HorizontalOptions="Center"
+                           FontSize="Medium"/>
+                    <Label Text="Hello World!"
+                           HorizontalOptions="Center"
+                           FontSize="Medium"/>
+                    <Label Text="Hello World!"
+                           HorizontalOptions="Center"
+                           FontSize="Medium"/>
+                </StackLayout>
+            </ScrollView>
+            <Button Grid.Row="1" Text="Click Me!"
+                    BackgroundColor="Green"
+                    HeightRequest="70"
+                    CornerRadius="35"
+                    VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+    
+    
 
 </ContentPage>

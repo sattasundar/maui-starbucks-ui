@@ -15,7 +15,7 @@
 		<ApplicationTitle>MauiStarbucks</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mauistarbucks</ApplicationId>
+		<ApplicationId>com.sattasundar.mauistarbucks</ApplicationId>
 		<ApplicationIdGuid>8BD16E63-C1A2-46E6-9444-0E53FCF15CE0</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -28,6 +28,49 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
+	  <EnableLLVM>True</EnableLLVM>
+	  <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
+	  <EnableLLVM>True</EnableLLVM>
+	  <RunAOTCompilation>False</RunAOTCompilation>
+	  <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+	  <AndroidLinkTool>r8</AndroidLinkTool>
+	  <TrimMode>link</TrimMode>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
+	  <EnableLLVM>True</EnableLLVM>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
+	  <EnableLLVM>True</EnableLLVM>
+	  <AndroidLinkTool>r8</AndroidLinkTool>
+	  <TrimMode>link</TrimMode>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-maccatalyst|AnyCPU'">
+	  <EnableLLVM>True</EnableLLVM>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-maccatalyst|AnyCPU'">
+	  <EnableLLVM>True</EnableLLVM>
+	  <AndroidLinkTool>r8</AndroidLinkTool>
+	  <TrimMode>link</TrimMode>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <EnableLLVM>True</EnableLLVM>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <EnableLLVM>True</EnableLLVM>
+	  <AndroidLinkTool>r8</AndroidLinkTool>
+	  <TrimMode>link</TrimMode>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -104,4 +147,11 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+  <PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>mauistarbucks.keystore</AndroidSigningKeyStore>
+    <AndroidSigningKeyAlias>starbucks</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>star123</AndroidSigningKeyPass>
+    <AndroidSigningStorePass>star123</AndroidSigningStorePass>
+  </PropertyGroup>
 </Project>

@@ -91,11 +91,11 @@
                                     BackgroundColor="Transparent">
                             <HorizontalStackLayout Spacing="10"
                                        RadioButtonGroup.GroupName="CoffeCategories"
-                                       RadioButtonGroup.SelectedValue="All"
+                                       RadioButtonGroup.SelectedValue="{Binding CategorySelectedValue}"
                                        BindableLayout.ItemsSource="{StaticResource CategoriesArray}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <RadioButton Content="{Binding .}" Value="{Binding .}">
+                                        <RadioButton x:Name="RadioCategory" Content="{Binding .}" Value="{Binding .}">
                                             <RadioButton.ControlTemplate>
                                                 <ControlTemplate>
                                                     <Grid HorizontalOptions="FillAndExpand">
@@ -179,14 +179,21 @@
                                 <DataTemplate>
                                     <VerticalStackLayout>
                                         <Border Padding="0"
-                                    Margin="15,10,0,5"
+                                    Margin="15,10,5,5"
                                     WidthRequest="240"
                                     BackgroundColor="{StaticResource Tertiary}"
                                     Stroke="Gray"
                                     StrokeThickness="0"
                                     StrokeShape="RoundRectangle 15">
                                             <Border.Shadow>
-                                                <Shadow Radius="5" Opacity="0.2"></Shadow>
+                                                <OnPlatform x:TypeArguments="Shadow">
+                                                    <On Platform="Android">
+                                                        <Shadow Radius="25" Opacity="0.2"></Shadow>
+                                                    </On>
+                                                    <On Platform="iOS">
+                                                        <Shadow Radius="5" Opacity="0.2"></Shadow>
+                                                    </On>
+                                                </OnPlatform>
                                             </Border.Shadow>
                                             <Grid RowDefinitions="Auto,Auto,Auto">
                                                 <Border Grid.Row="0" StrokeThickness="0"

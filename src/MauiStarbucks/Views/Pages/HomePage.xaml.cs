@@ -14,6 +14,5 @@ public partial class HomePage : CustomTabBar
 
 	private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 	{
-
 	}
 }

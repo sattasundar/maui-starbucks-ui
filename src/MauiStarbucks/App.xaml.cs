@@ -8,7 +8,7 @@ public partial class App : Application
         InitializeComponent();
         App.Current.UserAppTheme = AppTheme.Light;
         AppLocator.Initialize();
-		MainPage = new MainPage();
-        //MainPage = new AppShell();
+		//MainPage = new MainPage();
+        MainPage = new AppShell();
 	}
 }

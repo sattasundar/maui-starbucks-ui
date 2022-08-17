@@ -186,8 +186,9 @@
                                     StrokeThickness="0"
                                     StrokeShape="RoundRectangle 15">
                                             <Border.Shadow>
+                                                
                                                 <OnPlatform x:TypeArguments="Shadow">
-                                                    <On Platform="Android">
+                                                    <On Platform="Android, WinUI">
                                                         <Shadow Radius="25" Opacity="0.2"></Shadow>
                                                     </On>
                                                     <On Platform="iOS">

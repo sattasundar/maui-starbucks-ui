@@ -19,7 +19,7 @@
               VerticalOptions="FillAndExpand">
             <Grid.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
-                    <On Platform="iOS" Value="15,-35,15,0" />
+                    <On Platform="iOS,MacCatalyst" Value="15,-35,15,0" />
                     <On Platform="Android" Value="15,0,15,0" />
                 </OnPlatform>
             </Grid.Margin>
@@ -191,7 +191,7 @@
                                                     <On Platform="Android, WinUI">
                                                         <Shadow Radius="25" Opacity="0.2"></Shadow>
                                                     </On>
-                                                    <On Platform="iOS">
+                                                    <On Platform="iOS,MacCatalyst">
                                                         <Shadow Radius="5" Opacity="0.2"></Shadow>
                                                     </On>
                                                 </OnPlatform>

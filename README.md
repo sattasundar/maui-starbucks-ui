@@ -1,7 +1,7 @@
 # Starbucks App Redesign- .NET MAUI UI Design Showcase
 
 <p>
-Starbucks App UI Redesign using .NET MAUI.
+Starbucks App UI Redesign using .NET MAUI. Currently tested and supporting Android, iOS & Mac
 </p>
 <p align="right">
    <a href="https://snppts.dev/snippet/maui-starbucks-redesign" target="_blank">
@@ -22,6 +22,18 @@ Starbucks App UI Redesign using .NET MAUI.
 ## Screenshots
 
 ![Android Screenshot](https://github.com/sattasundar/maui-starbucks-ui/blob/main/images/android.png)
+
+#### iOS
+<p>
+  <img src="https://github.com/sattasundar/maui-starbucks-ui/blob/main/images/ios_home.png" width="270" height="600"/>
+  <img src="https://github.com/sattasundar/maui-starbucks-ui/blob/main/images/ios_detail.png" width="270" height="600"/>
+</p>
+
+#### macOS
+<p>
+  <img src="https://github.com/sattasundar/maui-starbucks-ui/blob/main/images/mac_home.png" width="600" height="470"/>
+  <img src="https://github.com/sattasundar/maui-starbucks-ui/blob/main/images/mac_detail.png" width="600" height="470"/>
+</p>
 
 ## Uplab Design
 

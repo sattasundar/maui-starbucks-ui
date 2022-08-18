@@ -147,11 +147,11 @@
 	  </MauiXaml>
 	</ItemGroup>
 
-  <PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
+<!--   <PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
     <AndroidKeyStore>True</AndroidKeyStore>
     <AndroidSigningKeyStore>mauistarbucks.keystore</AndroidSigningKeyStore>
     <AndroidSigningKeyAlias>starbucks</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>star123</AndroidSigningKeyPass>
     <AndroidSigningStorePass>star123</AndroidSigningStorePass>
-  </PropertyGroup>
+  </PropertyGroup> -->
 </Project>

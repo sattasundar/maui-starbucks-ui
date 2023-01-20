@@ -40,7 +40,9 @@ Starbucks App UI Redesign using .NET MAUI. Currently tested and supporting Andro
 ![Starbucks Redesign](https://github.com/sattasundar/maui-starbucks-ui/blob/main/images/starbucks_uplabs_challange.png)
 By [Muhammad Mussab](https://www.uplabs.com/muhammadmussab156)
 
+## Issue Reference
 
+https://github.com/dotnet/maui/issues/9458#issuecomment-1330850004
 
 ## Copyright and license
 
